@@ -19,16 +19,23 @@ function operate(){
     let num1 = parseInt(userinp1)
     let num2 = parseInt(userinp2)
     if(operator === "+"){
-        console.log(add(num1, num2))
+        add(num1, num2)
     }
     if(operator === '-'){
-        console.log(subtract(num1, num2))
+        subtract(num1, num2)
     }
     if(operator === '/'){
-        console.log(division(num1, num2))
+        division(num1, num2)
     }
     if(operator === '*'){
-        console.log(multiply(num1, num2))
+        multiply(num1, num2)
     }
 }
-operate()
+// operate()
+var buttons = document.querySelectorAll(".numbers")
+console.log(buttons)
+buttons.forEach(button => {
+    button.addEventListener("click", () =>{
+        console.log(button.innerText)
+    })
+})
