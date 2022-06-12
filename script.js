@@ -11,18 +11,12 @@ function multiply(a, b){
 function division(a, b){
     return a / b
 }
-// Taking user input and calling the right function
-function operate(){
-    let userinp1 = prompt("Please enter a number: ")
-    const operator = prompt("Add, Minus, Subtract or divide")
-    let userinp2 = prompt("Please enter a number: ")
-    let num1 = parseInt(userinp1)
-    let num2 = parseInt(userinp2)
-    if(operator === "+"){
-        add(num1, num2)
+function operate(num1, operator, num2){  
+    if(operator == "+"){
+        return add(num1, num2)
     }
     if(operator === '-'){
-        subtract(num1, num2)
+        return subtract(num1, num2)
     }
     if(operator === '/'){
         division(num1, num2)
@@ -31,11 +25,29 @@ function operate(){
         multiply(num1, num2)
     }
 }
-// operate()
-var buttons = document.querySelectorAll(".numbers")
-console.log(buttons)
+// The Dom's am getting
+const buttons = document.querySelectorAll(".numbers")
+var display = document.getElementById("display")
+const operation = document.querySelectorAll(".operation")
+let first_value
+let action 
+let second_value
+let on = false
+// button Listener
 buttons.forEach(button => {
-    button.addEventListener("click", () =>{
-        console.log(button.innerText)
+    button.addEventListener("click", () => {
+        display.append(button.innerText)
+        first_value = Number(display.innerText)
+        if(display.innerText.includes(action)){
+            console.log(action)
+        }
     })
 })
+// Operation Listener
+operation.forEach(operations => {
+    operations.addEventListener("click", () => {
+        display.append(operations.innerText)
+        action = operations.innerText
+    })
+})
+console.log(operate(2, '+', 5))
