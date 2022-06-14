@@ -12,7 +12,7 @@ function division(a, b){
     return a / b
 }
 function operate(num1, operator, num2){  
-    if(operator == "+"){
+    if(operator === "+"){
         return add(num1, num2)
     }
     if(operator === '-'){
@@ -33,13 +33,15 @@ let first_value
 let action 
 let second_value
 let on = false
+let tmp = document.createElement("div")
 // button Listener
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        display.append(button.innerText)
+        tmp.append(button.innerText)
+        display.append(tmp)
         first_value = Number(display.innerText)
         if(display.innerText.includes(action)){
-            console.log(action)
+            second_value = Number(display.innerText)
         }
     })
 })
