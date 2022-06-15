@@ -1,3 +1,4 @@
+/* body and footer design */
 *{
     padding: 0;
     margin: 0;
@@ -14,21 +15,7 @@ body{
     flex-direction: column;
     animation: change 10s ease-in-out infinite;
     text-align: center;
-}
-main{
-    margin-top: 100px;
-    width: 400px;
-    height: 400px;
-    border: 2px;
-    background-color: beige;
-    border-radius: 20px;
-}
-button{
-    border-bottom: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    border: none;
+    overflow: hidden;
 }
 footer{
     margin-bottom: 10px;
@@ -40,15 +27,31 @@ footer{
     font
 }
 @keyframes change {
-    0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 50% 100%;
-    }
-    100%{
-        background-position: 0 50%;
-    }
+    0% {background-position: 0 50%;}
+    50% {background-position: 50% 100%;}
+    100% {background-position: 0 50%;}
+}
+/* Calculator design */
+main{
+    margin-top: 100px;
+    width: 400px;
+    height: 400px;
+    border: 2px solid green;
+    background-color: beige;
+    border-radius: 20px;
+}
+.screen{
+    width: 400px;
+    height: 100px;
+    background-color: hsl(106, 90%, 0%) ;
+}
+button{
+    border-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: red;
 }
 #holdbtn{
     width: 350px;

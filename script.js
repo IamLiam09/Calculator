@@ -11,6 +11,7 @@ function multiply(a, b){
 function division(a, b){
     return a / b
 }
+// function to operate the calculator
 function operate(num1, operator, num2){  
     if(operator === "+"){
         return add(num1, num2)
@@ -25,10 +26,18 @@ function operate(num1, operator, num2){
         multiply(num1, num2)
     }
 }
+// function for the calculator buttons
+function ACclear(screen){
+    return screen.innerText = ''
+}
+function updatedislay(){
+
+}
 // The Dom's am getting
 const buttons = document.querySelectorAll(".numbers")
-var display = document.getElementById("display")
+var display = document.getElementById("outerdisplay")
 const operation = document.querySelectorAll(".operation")
+const clearall = document.querySelector("#Allclear")
 let first_value
 let action 
 let second_value
